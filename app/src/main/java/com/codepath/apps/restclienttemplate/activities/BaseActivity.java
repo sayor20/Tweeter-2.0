@@ -1,5 +1,6 @@
 package com.codepath.apps.restclienttemplate.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,11 +12,11 @@ import android.view.MenuItem;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.codepath.apps.restclienttemplate.R;
-import com.codepath.apps.restclienttemplate.fragments.mentionFragment;
-import com.codepath.apps.restclienttemplate.fragments.timelineFragment;
+import com.codepath.apps.restclienttemplate.fragments.MentionFragment;
+import com.codepath.apps.restclienttemplate.fragments.TimelineFragment;
 
 
-public class TimelineActivity extends ActionBarActivity {
+public class BaseActivity extends ActionBarActivity {
 
     private ViewPager vp;
     private myPageAdapter pvadapter;
@@ -33,6 +34,12 @@ public class TimelineActivity extends ActionBarActivity {
         tab.setViewPager(vp);
     }
 
+    public void loadProfileDetails(MenuItem mi){
+        Intent i= new Intent(this, ProfileActivity.class);
+        startActivity(i);
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -48,7 +55,7 @@ public class TimelineActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.menu_profile) {
             return true;
         }
 
@@ -66,9 +73,9 @@ public class TimelineActivity extends ActionBarActivity {
         @Override
         public Fragment getItem(int position) {
             if(position==0){
-                return timelineFragment.newInstance();
+                return TimelineFragment.newInstance();
             }else if(position==1){
-                return mentionFragment.newInstance();
+                return MentionFragment.newInstance();
             }else{
                 return new Fragment();
             }

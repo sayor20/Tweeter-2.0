@@ -177,7 +177,7 @@ import java.util.ArrayList;
 public class Tweet {
     private String body;
     private long uid;
-    private String createdat;
+    private String createdate;
     private User user;
 
     public User getUser() {
@@ -192,8 +192,8 @@ public class Tweet {
         return uid;
     }
 
-    public String getCreatedat() {
-        return createdat;
+    public String getCreatedate() {
+        return createdate;
     }
 
     public static Tweet fromJSON(JSONObject jsonObject){
@@ -201,7 +201,7 @@ public class Tweet {
         try {
             tweet.body = jsonObject.getString("text");
             tweet.uid = jsonObject.getLong("id_str");
-            tweet.createdat = jsonObject.getString("created_at");
+            tweet.createdate = jsonObject.getString("created_at");
             tweet.user = User.fromJSON(new JSONObject(jsonObject.getString("user")));
         } catch (JSONException e) {
             e.printStackTrace();

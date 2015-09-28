@@ -12,7 +12,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import org.apache.http.Header;
 import org.json.JSONArray;
 
-public class mentionFragment extends BaseFragment {
+public class MentionFragment extends BaseFragment {
 
     private TwitterClient client;   // instantiating twitter client
 
@@ -23,8 +23,8 @@ public class mentionFragment extends BaseFragment {
         downloadMentionsFeed();
     }
 
-    public static mentionFragment newInstance(){
-        mentionFragment mfragment  = new mentionFragment();
+    public static MentionFragment newInstance(){
+        MentionFragment mfragment  = new MentionFragment();
         // Bundle args = new Bundle();
         // args.putInt("count", count);
         // args.putString("title", title);
@@ -46,7 +46,7 @@ public class mentionFragment extends BaseFragment {
             // failure
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
-                Log.e("msgd", "error getting Twitter Timeline JSON");
+                Log.e("msgd", "error getting  Mention Timeline JSON");
             }
         });
     }

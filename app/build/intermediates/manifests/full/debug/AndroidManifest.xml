@@ -50,8 +50,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.codepath.apps.restclienttemplate.activities.TimelineActivity"
+            android:name="com.codepath.apps.restclienttemplate.activities.BaseActivity"
             android:label="@string/title_activity_timeline" >
+        </activity>
+        <activity
+            android:name="com.codepath.apps.restclienttemplate.activities.ProfileActivity"
+            android:label="@string/title_activity_profile" >
         </activity>
     </application>
 

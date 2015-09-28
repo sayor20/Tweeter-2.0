@@ -12,7 +12,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import org.apache.http.Header;
 import org.json.JSONArray;
 
-public class timelineFragment extends BaseFragment {
+public class TimelineFragment extends BaseFragment {
 
     private TwitterClient client;   // instantiating twitter client
 
@@ -23,8 +23,8 @@ public class timelineFragment extends BaseFragment {
         downloadTimelineFeed();
     }
 
-    public static timelineFragment newInstance(){
-        timelineFragment tfragment  = new timelineFragment();
+    public static TimelineFragment newInstance(){
+        TimelineFragment tfragment  = new TimelineFragment();
         // Bundle args = new Bundle();
         // args.putInt("count", count);
         // args.putString("title", title);
